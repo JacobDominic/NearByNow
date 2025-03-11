@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=BWBOu4Zw4nuNDnb4kklyimcBlLnrNXSrniBjEi5OUY-alS62_0l3u5Td64P8UJjRpRgMSZ8Nw3K0FaRX-yyNfYMcBJk81vFNJ_DUHgvFT1Cjop3Pie2o4hJL18pbPRBLZaHs6Gm1jd1yjrtV7Jj5y4Psv3uObj9qmq8fLHC2XZzyweEP9m-BpbIQ9UZh1hYKpUp9fzDg9qvw9uRn7XbZrOW6Fopf6g5cI74jxGoKTtXwMEwn1_9wD-5GPhXhD1kg0Gj59wtypiAQ4rlItglbh3FQ5xE4gzNRt7Y7gXojdHg0X12JcKydX6rL56PJybkhF6zC3MSFM-ckhuAr0p1p7UDYJh1E0MT6r8aJIVB_0UJPThewOct9rDwJ8_fleU1qnaiDkmkemBDubRKwgmmC5ccWObPsmvEmqMcDaC5R1BPHWK4he43iH4i1N1O0usAYqWN1HnkhOVWXgXgi4OAYjLu8RPKFRuOi164Ju9URsNLLbolwZqD2q8OapxEnO2jPndgjIptINA7b8MdqZR2DMlIrDsW6984Ip1AE3fFG2hyMYu1IeAsuxrXNOW4FSNhzLDuUme2hoT2cmVbofnkUp-bI3XBvEStKnkOlM0rWSdJYJA5I3tEg-porLLt9Xr_m2fZUakD-jOrYIS6fUeVVR1otr5Uc2HmGFHkVsdIlfUK2fHQ6Df2ftRfv_opFlz31wNf8fLGtmWWmCpa0rAU9-ERgamELMONpe6p3Wvp2UivWFRR6JCBHh3cwlBhMm6jRTqR_LDHmYBb9VZuiny4ZWEFjRZxlaDHO0dyaEuUX0h7eiIEgxWe09i-b0lZpZf423DeqEvcg6ruPiWNFYeX5ON4vOS1adrK43y5XPQMug2hEUDylid0Q34ktk0XI2nokw_m42Jl6bdtyUtwEaYcBcHpiuj40DlzobRKGC2lYDdv46dLINI-EngSG7aa9tA5pssm0pyOEUyLgg8HoUh3p8xO7PL-QClnFbGpfEgFyu51u-wnGx2QTpasof26OyDkv5ynOi1P-Y9jZhCmcIUukC18ZS8_qfm7eb1ZCSKRkyU31EeVNpAKHlPSWaNwL_fdInGOYIaifQPQkLa9Z0vG3H8kEfvAHp-urO_q1HuM0loyG9bP_hy4JVlwR-mg3SrFzkBUHyg6Wkd9i6c-cvIgWpYee9pAloUBooMOQsx_AP5nW5qTl95M7XpAD-BEVhTGW6IK2iaE--N1mdBNds9b4uM5l9-8wgKITFx_sX93SwsrJ27tW33LIPvKkX08T_zDxRW2ezdQv4VG6hxcwlm7saVfAQibKxPTJHLzvb4vpo1gMwZxolpNIrfr8meIJM78Bt9unsmxSf27EK9AxafpOd4u2jYjCtQCoFPgxLBi4Gvnvax85jZ6JS2Y7QrzwYf0OgWfMBjdpsk6Ajrq-HXozXDHmbmBVluAU6gA8REu1tisBwHYiB_YSsg1W7IHIEhvh3R_eQuSj6wVkhf6XTcGlBWh6vyaS5SPy_PHJW_O24_wYuZtE2OTH_8715rfTlKs6eHuxZ-106eo_oQ44smXyIt0y9_rqBrzIDKpyOkq1wA7bNZPOn1nYx31fRBrRXU3DrRE9zMNdmCGZnq-jS-C1jfq6Q_13IhVpZEQKjEJQtpkAdSyqbYdnAoq2kneymtJI2j1SK7TJveY18UsWWnxeMFTDVLvmIt5qg_bUTlbRxF-PZb7fO0W0vsGCYy_K5NcxhiwLE4DMfYDLor3duAd4X_Xjww66sd-FKxbtx1fjPmg" nonce="252afbdd12e7427be612528e84585715" charset="UTF-8"></script><style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f7f4;
+            text-align: center;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo img {
+            width: 120px;
+        }
+
+        .home-btn {
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .home-btn:hover {
+            color: #e07415;
+        }
+
+        .payment-container {
+            max-width: 400px;
+            margin: 2rem auto;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        .payment-container h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .payment-option {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 0.5rem 0;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .payment-option:hover {
+            background: #e6e6e6;
+        }
+
+        .payment-option input {
+            margin-right: 1rem;
+        }
+
+        .proceed-btn {
+            display: block;
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .proceed-btn:hover {
+            background-color: #219150;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="../static/image/minilogo.png" alt="NearbyNow Logo">
+        </div>
+        <button class="home-btn" onclick="window.location.href='mininew.html'">
+            <i class="fas fa-home"></i>
+        </button>
+    </header>
+
+    <div class="payment-container">
+        <h2>Select Payment Method</h2>
+
+        <label class="payment-option">
+            <input type="radio" name="payment" value="upi"> UPI Payment
+        </label>
+
+        <label class="payment-option">
+            <input type="radio" name="payment" value="cod"> Cash on Delivery
+        </label>
+
+        <label class="payment-option">
+            <input type="radio" name="payment" value="direct"> Direct Payment
+        </label>
+
+        <button class="proceed-btn" onclick="proceedToConfirm()">Proceed</button>
+    </div>
+
+    <script>
+        function proceedToConfirm() {
+            const paymentOptions = document.getElementsByName('payment');
+            let selectedOption = '';
+
+            for (const option of paymentOptions) {
+                if (option.checked) {
+                    selectedOption = option.value;
+                    break;
+                }
+            }
+
+            if (selectedOption) {
+                window.location.href = 'confirmation.html';
+            } else {
+                alert("Please select a payment method.");
+            }
+        }
+    </script>
+</body>
+
+</html>

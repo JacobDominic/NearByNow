@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | NearbyNow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marykate&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=uDjalX8iFrR3azSD0gqDUWIZV7k7hxRQ_wLQhd_PP1QEp9nhbijFUsAVxJXqpAMb6VEOjR9hKpTzHLn6Ii9CZGEeKZyh3YJkvlwM02bk0wWfRSqneb9XasaseymzUHexRDm-zuOPzp4mwjWutXATUEL3Qau5Hi0oYmo8rWWbNtEhlfLsaNHh8sc_si6H6yeb-x_25tVz559Qwi6zQFMxeTwwuHujYe9X_7Exe5S1k5d-q3bhBEJw9e-hBcJsZfae2SQYBvVwZzoLfpBL3EDqJHAyfp1sSKZaft15LLLx-g1vNVwzHEsQGF4IBa7Hefdgv39hJz52BTL-tJRZcvedVtuKsbzyd7WJVqIYqhw-yVbnhXlgBpmcFGOR7gCfEDn9aNjEJwQbMx-r3w7v3vcm_dlOLqR7ChIMQo7bwuuzmIjCEjCIglR7oMteI8RQm6rhX0X-KhyjMeJJaAJxs5yqlIpGokYbqNO3wCm7bjVTYMBkdFbgtkOHhbo9JLuWUVhTKfsJALn7lEm3yvnmwkPlWPwWVQwpSOX8-fQMrdxSaeEJnSwzIwFBbNOMr2PBjXFhrXU4v7N08W0W6_5D-60iEI1RIFnvD1oLin0H3W__t79DMRga8MuGmj-dc9CFQaLhUZNjCQhIJ1eaOOJr5KkO7NyrXyJLwfmxDoOfCUt62OXSYles-3CXcwswXUhtVnnj2JOV8QeeMwCdKLS8MgIcc0CpKi_f_JqNA1Bhy3OEJVPr37jZCDm86pl0rWcjZm3LWP80vbixMQV23CFbre9FpC95G6h2vjvjvufbgElC0OkoIRAkt16CG328-uqmpQvR5hpoe2tiFBi-632qf9e6ybNW1VQmiAp5zO2Rvzj2kmGd4nTgybKoX75S0DdrZV4K_X-U01436kU43CJkWhX56PGu2s_QDZlSt73UjGp-PoPT3lrhuTI33eL8d44XvsBuszVf_N7tpDSwQFW9weiyOelh6fnZmhXCoVS372ORM3UB7CcEHBMwwgry-y7-RO2l4DOHS0u1UXHgC_cvX7AR4tymT6oUyDBMD1yN4x1tQgtllrRl_ajpAeo8NBZJ4CP4ugTlypQKzjEYUWIZROmleSXyoWqIOMsfPON8mJiXI08g9U7xJy1Fm4bv3A0XbpkcJxvXEfelOLDWcCvOzxealm1RRyXlrl2w-oqFknbSBd3J5JN-xc5H1CKATnITNNRE8yn5xftQzKQIuuPaDrUIj-25TiW3AAIyXTbHXMJV52Hvs4xHzNJICGa454zoq2ucbjR_pi-kbJbgQ5fnizR7XV6FwI-qc5DUN3kl5QAwC4Sc2a4JNtzn_knBXuy02uWZNQJgEkuA7T8ar_WgTUFkzBcAc5H6P9HgmZE9UGdCU1x9AGcOkc229GcHqcgdBKqWiPf7CRfztAl9WUL7Z3GuY_lHuMrVk8vXq7ykHV4s2XC57p2WY7Hm_aaouM7RIt8P50Uhqpsd3v8FXIZsKJpVuFuvtv9nYTpBoHBRA_kFsnkw_hZYu3af_m8cUhCkHug8-qoJCVc7jxqeFQ1ynymwtEXGjWDw4dXls-55LzbtNCRlUZhl0QuJnREZ0xyLiIvaKA_FjyoBJPHn2DHw5EY_cWWX_AmFTEZNhRhtMAAnxoPPu4PH0eUJU9z9c0Mno40OXnOjnJyj-vWQ6XEAXDU_sDuG1dq4yE5uzQew5lUtdOwoXOc4PaHcT7su3mYd0A-4cm9hwvsc5rUQAnBinlngZLRW_28coQUM107ST2TR9vU" nonce="f156c148462763db8964eebd62cf56cf" charset="UTF-8"></script><style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Background Image */
+        .bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        /* Dark Overlay */
+        .bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Darker overlay */
+            z-index: -1;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .logo {
+            font-family: 'Marykate', sans-serif;
+        }
+
+        .logo img {
+            width: 120px;
+            height: auto;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #ef7300;
+        }
+
+        .home-icon {
+            font-size: 1.5rem;
+            color: #ef7300;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .home-icon:hover {
+            color: #ffb380;
+        }
+
+        .login-container {
+            margin: auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 90%;
+            z-index: 1;
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+            color: #ef7300;
+        }
+
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .login-container label {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .login-container input {
+            padding: 0.8rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .login-container input:focus {
+            outline: none;
+            border-color: #ef7300;
+        }
+
+        .login-container button {
+            padding: 0.8rem;
+            font-size: 1rem;
+            background-color: #ef7300;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .login-container button:hover {
+            background-color: #ffb380;
+        }
+
+        .login-container .switch {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .login-container .switch a {
+            text-decoration: none;
+            color: #ef7300;
+            font-weight: bold;
+        }
+
+        .footer {
+            margin-top: auto;
+            padding: 1rem 2rem;
+            background: black;
+            color: white;
+            text-align: center;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Image -->
+    <img class="bg-image" src="../static/image/bgimage.jpg" alt="Background Image">
+
+    <!-- Dark Overlay -->
+    <div class="bg-overlay"></div>
+
+    <header class="header">
+        <div class="logo">
+            <img src="../static/image/minilogo.png" alt="NearbyNow Logo">
+        </div>
+        <nav class="navbar">
+            <!-- Update the href to point to mininew.html -->
+            <a href="mininew.html" class="home-icon"><i class="fas fa-home"></i></a>
+        </nav>
+    </header>
+
+    <div class="login-container">
+        <h2>Seller Login</h2>
+        <form id="login-form" action="dashboard.html" method="post">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <div class="switch">
+            Don't have an account? <a href="signup.html">Sign up</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 NearbyNow. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

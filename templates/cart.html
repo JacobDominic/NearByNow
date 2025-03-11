@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=zdyAB2lMVzklYZrP7XQUb-pOGci2dW5sFlQOI0j9swzU3vvCU0K0CkXWe6ZeMG8smW1tEmdhtH8gIXV2S1v-BtcePXlhv9o3kFy3yqtPCDtbvXqjowjFEU63l_LlPZR9RYzCIvYWRgWs3t_7o9kWkKGduP6KalGBmiv5JBh1Sz1uMbsxFkUuuhz-JymK-xGfdZS82gZmYVbZ2zjc8PMgZ8L4SfxWLk6mhra1O40JFqQ2Aa0Qij585vbtRgQslcmj_ZjqAx_bshSkeEiAPIk1ZcJXlyge68PQx1Yv9fL2_eNxQjL_6B_Hr-gtUHy3sFYqBC9zuCUWDcaonShmwIbtYn2Y_tODDUQPrpt_9jtKB3u1y_wbxiUn2LlCybqiTsB_D71glFU3hV0AHzGWLKLmmsX9fVrmudVaF9d8YZjZNQwtOm5E61DyDVYwLDB6EfdA3V4adEyJVpsbyIVXwW99g-cw_Zn14Wh-_z5SOcgf09OqW35227a3Ekg7eUkS6BlDwkaTsd-2MSrnNYGSbe-pK1M09oia7rA0TMlv-PS8QErXPvOW8qJmC455sGLiphDOXHPm7UHYHzA-uffR3DkTQ3MA-r-3U3qVa5LaLULJcUACjG-lHw45mGivBQuCBq63wQFGZliiqZ7H21YRMIPZsnO45j8Tgk4tM0adD4UIHl0Szz05crzL8-j5aBDw2uDBXCMq11T5eVg1C7TN9Eoxb29L1CBZQP28by2bPA04wPZW7L5cgIDSTHB9MmCYVUd10REVaVVRdkxw4-g5aoJ_1l9ApccD5vas05F-OIE5l4WAhZzESsy0ggnXNyU5mjlqE3MtBj8l09dBmyH0ONsHmAa_GsvU53siqCTgLKRZPwb7x0Ray1MOkKsA0DUOEz_WUbzVmGwSD4Ap5jit1gTnsbl76WV80lpS5ffSGGxy-ambWP2ln8oc96o7sN9hbHUddqz_qJaTpFYMU4i5CBs6KAvuKeJ0sjdVGWNi758iADi_iAiO5DCPYU3noCnM3x24QmvchyW51nbOF86SmgWkijzwnI1b0yJkLZ_01xGw-aYkr9hjOW0fDpFdT8d3YqBOPnPU5J5kUcA3Uj5CUTvlNLVOFVD1fzBkWU-6kwg3vguifbX5XTcofDISoKRgCsYrK04NKMWvPiUFVzG5SOtWYd_F5PXpEAg03sozxcGWMp3UYV90cCDYTe6pcTibENkzjzju7tZWchPfbjbnXCLlRtolyiIGRuJF7XejX9TqVEMVMywjSJOxh0w8h5FTxrxwN_NkSTvh73Bc2RhVGFMD8qrxHURkXd6_h42eu4nYToSO1EiS2aGq_bOhfAPmtsdTWCRq8PlQUBkh_L_b-xV4P6DrbQS-cFCtvVho94q2uigx0S5_8UlETfkRVqro-TWUnj59XmWMdGMmVn7VXtFKea8Eg8nmvCis2e3Vh4hKwm9QlfYnugTGwA46t_IeF84wsN3pF-LTexnDBYHM37shsd9mo_O_xhxdDm-s3SkzY5GlANOr-R6Xxa03YDc_D7xGDrr8QOOt2mhRWPAbTYtClfxC3IZMj0Ou66-qz3rAgPS8iSwJK5QY15L6lQDdfRxO03LBp2S4T8GWxgjV03y5v8qQrb4LTaGoJO_mYWRPtcRmdY7PPCUlaAwin06tPqMadBguay3FoWNFeeE-ljXgYDotKiQfOcyYRrc2_XxNl6PYxOGqkTETC061FiLZzFDpLchbQLQWkhFc2pNg0GyD68bscMu2ig7pvNtm_UllmfQ" nonce="6d1bb324734e759061c2561d5b99a57c" charset="UTF-8"></script><style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f7f4;
+            text-align: center;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo img {
+            width: 120px;
+        }
+
+        .cart-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .cart-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .item-details {
+            flex: 1;
+            margin-left: 1rem;
+            text-align: left;
+        }
+
+        .item-details p {
+            margin: 5px 0;
+        }
+
+        .remove-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #e74c3c;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .remove-btn:hover {
+            background-color: #c0392b;
+        }
+
+        .total-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        .empty-cart {
+            font-size: 1.5rem;
+            color: #e07415;
+            display: none;
+        }
+
+        .payment-btn {
+            display: block;
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .payment-btn:hover {
+            background-color: #219150;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="../static/image/minilogo.png" alt="NearbyNow Logo">
+        </div>
+    </header>
+
+    <div class="cart-container">
+        <h2>My Cart</h2>
+
+        <div id="cart-items">
+            <!-- First Item -->
+            <div class="cart-item" data-price="250">
+                <img src="../static/image/c2.jpg" alt="Item 1">
+                <div class="item-details">
+                    <p><strong>Craft by Artistry Corner</strong></p>
+                    <p>Rs. 250</p>
+                </div>
+                <button class="remove-btn" onclick="removeItem(this, 250)">Remove</button>
+            </div>
+
+            <!-- Second Item -->
+            <div class="cart-item" data-price="300">
+                <img src="../static/image/f3.jpg" alt="Item 2">
+                <div class="item-details">
+                    <p><strong>Painting by Ahfin</strong></p>
+                    <p>Rs. 300</p>
+                </div>
+                <button class="remove-btn" onclick="removeItem(this, 300)">Remove</button>
+            </div>
+        </div>
+
+        <p class="total-price">Total: Rs. <span id="total-price">550</span></p>
+
+        <p class="empty-cart">Your cart is empty.</p>
+
+        <a href="payment.html" class="payment-btn">Go to Payment</a>
+    </div>
+
+    <script>
+        function removeItem(button, price) {
+            const item = button.parentElement;
+            item.remove();
+
+            let totalPriceElement = document.getElementById('total-price');
+            let currentTotal = parseInt(totalPriceElement.innerText);
+            let newTotal = currentTotal - price;
+
+            totalPriceElement.innerText = newTotal;
+
+            const cartItems = document.getElementById('cart-items');
+            if (cartItems.children.length === 0) {
+                document.querySelector('.total-price').style.display = 'none';
+                document.querySelector('.payment-btn').style.display = 'none';
+                document.querySelector('.empty-cart').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NearbyNow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marykate&display=swap" rel="stylesheet"> <!-- Added Marykate font -->
+    <script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=y3Qlgp-wGGVFnxoL4Qur_PRNux2hoqDcw8SaMmsKygDgONygv5XpjWfN-0Ho_ur9_rgjkXtSt_ma6a3hDMNj2cVCZLtFgFSXsrVNA6bNe68ge1ks62ikQACsSkwIhZUFYQehAqNQsXLxYAivfPHt_g7zgl0_5XfMPD4WihYJ5VGB-7jPA0kJmrkH7p0gMltwnizpTcoiI5Bu7eBD4t6DXCIiBm1-wMu5o5jirk-zM_bi_50qNWgdblyS79zP6FmlLrQydKRQLpL0EcXbE786Q3Iha3PJwjlWyrnD1N7eDb27PgDT--aUsqORbaLIzMGOUa3G2xIxIfIYidBqpjOFmhhknMHtRRtcF_WS5swp3ytPjcYb52rZURsDtCrElGGO5XESoAiEDU_yrUlj8EkzvpZqoC05Fg7cScftA_nw9DnlS9EFHWDYCgzw0wGUF1hvSFDC0UfwYtskvyFXaTL2433TLhXfpezv4ltyomLp-2V40Ylxl2jDeyUSo8Gkf5NLzzlmbZgOOb8BNsVPgrRPAD4BH5sS4KmwMdh8VR9Tszzd7cyaxzQ8Mg2cDoFhbpmJt0tI8aIhkYqgzM45ZzcRSNuBahjK11HnTLIYMEAlithoz6hoj1QSIaE52f9vc7otX3qdWZEAAucTA9plMf_D5iT4GFSMUAqCR9IQAVjvJgJdyEWP1WHXyNCq0O98ZVvUOImulQnnbNRLBN2n24TJ22OTvU2Y4gXxJdJ62M2KElXgrUhB4o71VG0gzP6_B61tzhv9-_HeSwf1m3zZ0pNwCKD6aM52c70Bo86o53oB0PyeSXrwThsWig6Bo3jHodXNg_6ez8KubIql0lZLU5w--rFsZYWRtf8BaOyUeQnTxiGWWQosVc97gh1PHQLh_Z0Q6p1uPzjYl1SlvFcs9UfFKngJqjHJr12GX9z_3__3ochZti4Ly85-pQxL6pEANN_rOMXEmc-tQiOy7Srqb0EsVdci6dkY29UdJHvaynsHpzmu0ZdW9tk7r4Yg3lan_JDCE9NK0wFciuL5So9Uf7FG7luwuSCoglIIVuq6sI2j9a7QXFLtXNVLVx_M4d4d4e8DAM5G_KBP2GJgTzDYMOZWOR2Urk1jKV2gU6-3hwmx7sI5Xu7bdWi38yIqD323zc9dlvy682rh0036JW1-NvOVdlwTYK_T7jYJCeXnxMl-ledUoB4AFxZSPEBxXOcBUtoTOR44PopeyFqLpKfxTJfO39Cz2VvgUco2lbEBQs8HD7Z2B-hrpSFnHz8YH0lG82647S13Q6dTB4FKox0l21FDBXQ7bJnNnt1OYS6OgdTeiC_vCKVSxLYOy1S208vePyDFjnh46jk6EsPQQCx3EStCxoGR58j61XjXkxrOJiDp2E5anO262Tm0VSJsBxmEMWw3GrU3PTTxsDXkQx_Q-gkcq3GqbyeQ6cpxNffjfSKg_YVYabmBkEeRHdPBPrESGhj7ErquMyw8Et3heJf7bpiwvKKTCvHLzbldLaRuPlS4kXQN0UhnEiQE4QqewrcRHDgzdq8onHXwn8FQQbrYlB-q2CI9wIVGx5XMAGPeRslb-uhJnhu2IUqOmbcY_3S-aFLBunD1NRONk3pVccMQ6CZWfMAx2tc6eg77ycuP9wiCQEQ0kn34vh97o04mAkf4r3OKNlhbrujT_gkTX1diaLOyHDWpZuM7mkWChdmK9P_GEJNxb0qaWXK3S1jPFUCfT-QxGOImpoAFoLdtg7-oYkcipIUBhKPr01Pik77NKD98SkE" nonce="ac4f530dc4cd1fcfe41aaadc55f9328c" charset="UTF-8"></script><style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f7f4;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: white;
+            color: black;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            font-family: 'Marykate', sans-serif; /* Changed font to Marykate */
+        }
+
+        .logo img {
+            width: 120px; /* Set width of the logo image */
+            height: auto;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #c8e6c9;
+        }
+
+        .auth-buttons .btn {
+            margin-left: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .auth-buttons .btn.login-btn {
+            color: #ef7300;
+            background-color: white;
+            border-radius: 15px;
+        }
+
+        .auth-buttons .btn.login-btn:hover {
+            background-color: #c8e6c9;
+        }
+
+        .auth-buttons .btn.signup-btn {
+            color: white;
+            background-color: #ef7300;
+            border-radius: 15px;
+        }
+
+        .auth-buttons .btn.signup-btn:hover {
+            background-color: #e6d7c8;
+            color: black;
+        }
+
+        .auth-buttons .btn.seller-btn {
+            color: #ef7300;
+            background-color: white;
+            border: 1px solid black; /* Added thin black border to Seller button */
+            border-radius: 15px;
+        }
+
+        .auth-buttons .btn.seller-btn:hover {
+            background-color:  #e6d7c8;
+            
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            color: white;
+            height: 70vh;
+            padding: 2rem;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero-bg-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Darker overlay with 40% opacity */
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            background-color: #ef7300;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ffdfcd;
+            color: #333;
+        }
+
+        .features {
+            padding: 4rem 2rem;
+            text-align: center;
+            background-color: #6c3114;
+        }
+
+        .features h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #ffffff;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            padding: 1.5rem;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .categories {
+            padding: 4rem 2rem;
+            background-color: white;
+            text-align: center;
+        }
+
+        .categories h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .categories-grid {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .category-item {
+            padding: .5rem .5rem;
+            background-color: #6f3500;
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.3s ease, transform 0.3s ease;
+            text-align: center;
+        }
+
+        .category-item:hover {
+            background-color: #b85c07b3;
+            transform: scale(1.1);
+        }
+
+        .category-image {
+            margin-top: 10px;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%; /* Makes the image round */
+           
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a slight shadow for depth */
+        }
+
+        .about {
+            padding: 4rem 2rem;
+            background-color: #927a5f9c;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer {
+            padding: 1.5rem 2rem;
+            background: black;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #c8e6c9;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .categories-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="../static/image/minilogo.png" alt="NearbyNow Logo"> <!-- Image logo instead of text -->
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="community.html">Community</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            
+            <button class="btn signup-btn" onclick="window.location.href='blogin.html'">Login</button>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <a href="your-link-here.html">
+            <img src="../static/image/bgimage.png" alt="Background Image" class="hero-bg-img">
+        </a>
+        <div class="hero-overlay"></div> <!-- Dark overlay added -->
+        <div class="hero-content">
+            <h1>Discover Local Businesses &amp; Entrepreneurs</h1>
+            <p>Connecting communities with small-scale businesses and sustainable products.</p>
+            <button class="btn explore-btn">Explore Now</button>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <h2>Our Features</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <h3>Personalized Profiles</h3>
+                <p>Tailored profiles for buyers and sellers to enhance user experience.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Secure Payments</h3>
+                <p>Reliable and secure payment gateways for hassle-free transactions.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Eco-Friendly Products</h3>
+                <p>Identify sustainable options with our Eco-Friendly Badge system.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Community Engagement</h3>
+                <p>Participate in blogs, forums, and local events to connect with others.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="categories" class="categories">
+        <h2>Explore Categories</h2>
+        <div class="categories-grid">
+            <div class="category-item" onclick="window.location.href='blogin.html'">
+                <h3>Homemade Food</h3>
+                <img src="../static/image/food.jpg" alt="Homemade Food" class="category-image">
+            </div>
+            
+            <div class="category-item" onclick="window.location.href='blogin.html'">
+                <h3>Painting</h3>
+                <img src="../static/image/painting.jpg" alt="Painting" class="category-image">
+            </div>
+            <div class="category-item" onclick="window.location.href='blogin.html'">
+                <h3>Crafts</h3>
+                <img src="../static/image/craft.jpg" alt="Crafts" class="category-image">
+            </div>
+            <div class="category-item" onclick="window.location.href='blogin.html'">
+                <h3>Part-Time Jobs</h3>
+                <img src="../static/image/job.jpg" alt="Jobs" class="category-image">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>"NearbyNow" is dedicated to fostering connections within communities by supporting small-scale businesses and promoting sustainable, personalized transactions.</p>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 NearbyNow. All rights reserved.</p>
+        <nav>
+            <ul>
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms of Service</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script>
+        const exploreButton = document.querySelector('.explore-btn');
+        exploreButton.addEventListener('click', () => {
+            window.scrollTo({ top: document.getElementById('features').offsetTop, behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>

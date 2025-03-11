@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painting Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=QK5rtUTEjiKYVuYKKpXxppJoJTJqfGmmCqFfA0DEiIpXeKflGIE6k0KsJgcFJIbTrClsFt2tIsZYv_X-TqASbv0t1s7v-uXbdNCjO4OaZ2hGSs0JZbK1RnU9L4yzklticIBL4pD8ugT_yFidbFilQ9v43Uel05ma0aSoJIrIK0JrBpc9gntDp3zzRPRIFye4a_xnsNvOxpxylm-6U-vxKStBtifPF3A6LEK5rD4-27tzWRMNjLr-k8a8N9VOOohbepDn1PRNwGOmbOgI2r0y1bYu_VyV8JpfX7Kvm9LBU1zdiyqL96IrwLBVS38_COnepeqAaEgdNiYkcdQoZwwXVuIcEHf9CNhWsB2aWDKNsrzSikyCVs63HAxUHLzlc6kvwC1VLXtYej1hsIU-5Q7Hd3CcwaN6qEXPIdrRqZTLuzImIXZVSEKNCeD0ujNOD1mq8GLUPwLdQXiqs8oq2W6gwQK0AfQFUTWEUyhbiZsvem2XBpK3EQDG9QuVsPUCmbpLyFUZ-OjnSa_0OLGjXRVOlXWcmpnUdQYLi8IK7eCev_PunJ3xACrJ9uzhVK6YzPeEtkej6QWrdv8nBiy8Ek_qDRUAxQ1-wGs8tW2RbW5vQ3mMJM90kICKuvieHXNxbYFuB0R6OxZvbRL2YmP_8SA1gz_Y22HLWaMnD81LbW2t6V1cdJ8IjR1FSuE1JA0932NhD1wcnOO0Cerd73KLd8D_4rur_iSfZGfpPcBIb30j3I724h0_HG3ruB9w7EeKHyY-OjgRnLVbJ2eV6Wpo8cZ72F74lMQQbR7u3xuhiFatVVvU6YHpZGa03-FP5S5d5X7DI0Clph3IUUKy8TyYwJr_oPJ4WAX7VbAEY05UVGuKDE5AEtnNl86omL4jfewEtuC626O0a5NQqgtul4tefnOsjEzgS2Tp6cnb5aVUlfierQwVIDP5tLCwpId7XLdqwcTLCepUWGqH2UdACeZqXYrmxakYSYVd91mMLt-yQMoVhi_HwIRD3DwDZzJs2ZtUFdxnJVfU8sc53iIilQu9jtmg7JjR6gtalquypz3dxDHgaZ9PbS4ZfdlXqFF_3DRw_BRPR_EMkAGmgL8CoHaltEsZvV1B5TSWnDJvqfJwOyOGgcUaiOo7UI0M3lU4e0242GWIwv3-V-GbDdJXpLQwJZz86RQuw7R48tee-x8a-brGX8Vkt40Xj7Cc5lKz4zILoTABpwiGvrGwSgZb10UTmu_qUsVlo_3_o2W8_VxhXa4q3i76OjSFkZ8-HImXjg-J5MknR1RXg1aVzjjBnakKu_mpsxVeGFUc6G0mLp9pSmIEellbPOsRjCJT9HFaMCbFyAQNFfvLcM_FsNY8R3ghmCTl-MfzMMxCO6f6gndUxlE-9lA2bCp4SH9DUcmYSH-OK7rAK9j3vDY2u7e1XO7djE1zfwJJXNfCJ4NXiUXQIWZWErFRcmhqzY1eONT5KDMXGgzzE4yDgujXPvYpt02Ca-63iR60Ye6QiKaVpacLuc7kgTpOjJsR9rahMR23dX801L2AzvVM5WgcFomv7OqhwK2BIokatJELtfWig1pleSuplcQBikk7gelSywhI0aNdQ_tw4ajfDMyNxBNmQ5e332Xpa9n0aqVe_GDxjO5Twe7HzAy4YwAoe2v8vFrW6HP2T7SOeAc1zZoEWk0BBoZC1Qb8gtPG21gOylXpKPtAwZ_NeKoH4Ek-6MHrZ3IDpc42UYFBUCEcCV5GCJuziYl-aJ9nRio8OUOg_oLKtehSuc5p304" nonce="c155b42b6bdab3ae31ccde8e387c8ce5" charset="UTF-8"></script><style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f7f4;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo img {
+            width: 120px;
+        }
+
+        .home-btn {
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .home-btn:hover {
+            color: #e07415;
+        }
+
+        .content {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .filter-container {
+            padding: 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .filter-container select {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            margin: 0 0.5rem;
+            background-color: white;
+            color: black;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .filter-container select:hover {
+            border-color: #888;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 0 2rem;
+        }
+
+        .gallery-item {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .item-details p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .add-to-cart {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            background-color: #e07415;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: #c96110;
+        }
+
+        heart-icon {
+            font-size: 1.5rem;
+            color: white;
+            border: 2px solid black;
+            border-radius: 50%;
+            padding: 0.2rem;
+            cursor: pointer;
+            transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+        }
+
+        .heart-icon.clicked {
+            color: red;
+            border-color: red;
+        }
+
+        .no-items {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #e07415;
+            padding: 2rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        a:hover {
+            color: #e07415;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="../static/image/minilogo.png" alt="NearbyNow Logo">
+        </div>
+        <button class="home-btn" onclick="window.location.href='mininew.html'">
+            <i class="fas fa-home"></i>
+        </button>
+    </header>
+
+    <!-- Filter Section -->
+    <div class="filter-container">
+        <label for="priceFilter">Filter by Price: </label>
+        <select id="priceFilter" onchange="filterItems()">
+            <option value="all">All</option>
+            <option value="100">Less than Rs. 100</option>
+            <option value="150">Less than Rs. 150</option>
+            <option value="200">Less than Rs. 200</option>
+            <option value="250">Less than Rs. 250</option>
+            <option value="300">Less than Rs. 300</option>
+        </select>
+    </div>
+
+    <div id="gallery" class="gallery">
+        <!-- Painting 1 -->
+        <div class="gallery-item" data-price="250">
+            <img src="../static/image/p9.png" alt="Painting 1">
+            <div class="item-details">
+                <p><strong><a href="profile.html">@Namratha</a></strong></p>
+                <p>Rs. 350</p>
+                <div class="actions">
+                    <button class="add-to-cart" onclick="addToCart('Painting 1')">Add to Cart</button>
+                    <i class="far fa-heart heart-icon" onclick="toggleHeart(this)"></i>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-item" data-price="250">
+            <img src="../static/image/p1.jpg" alt="Painting 1">
+            <div class="item-details">
+                <p><strong><a href="profile.html">@Namratha</a></strong></p>
+                <p>Rs. 250</p>
+                <div class="actions">
+                    <button class="add-to-cart" onclick="addToCart('Painting 1')">Add to Cart</button>
+                    <i class="far fa-heart heart-icon" onclick="toggleHeart(this)"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Painting 2 -->
+        <div class="gallery-item" data-price="300">
+            <img src="../static/image/p2.jpg" alt="Painting 2">
+            <div class="item-details">
+                <p><strong>@Nidha</strong></p>
+                <p>Rs. 300</p>
+                <div class="actions">
+                    <button class="add-to-cart" onclick="addToCart('Painting 2')">Add to Cart</button>
+                    <i class="far fa-heart heart-icon" onclick="toggleHeart(this)"></i>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-item" data-price="250">
+            <img src="../static/image/p6.png" alt="Painting 6">
+            <div class="item-details">
+                <p><strong><a href="profile.html">@Namratha</a></strong></p>
+                <p>Rs. 150</p>
+                <div class="actions">
+                    <button class="add-to-cart" onclick="addToCart('Painting 1')">Add to Cart</button>
+                    <i class="far fa-heart heart-icon" onclick="toggleHeart(this)"></i>
+                </div>
+            </div>
+        </div>
+        <!-- Painting 3 -->
+        <div class="gallery-item" data-price="250">
+            <img src="../static/image/p3.jpg" alt="Painting 3">
+            <div class="item-details">
+                <p><strong>@Ahfin</strong></p>
+                <p>Rs. 250</p>
+                <div class="actions">
+                    <button class="add-to-cart" onclick="addToCart('Painting 3')">Add to Cart</button>
+                    <i class="far fa-heart heart-icon" onclick="toggleHeart(this)"></i>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-item" data-price="250">
+            <img src="../static/image/p8.png" alt="Painting 8">
+            <div class="item-details">
+                <p><strong><a href="profile.html">@Namratha</a></strong></p>
+                <p>Rs. 200</p>
+                <div class="actions">
+                    <button class="add-to-cart" onclick="addToCart('Painting 1')">Add to Cart</button>
+                    <i class="far fa-heart heart-icon" onclick="toggleHeart(this)"></i>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-item" data-price="250">
+            <img src="../static/image/p7.png" alt="Painting 7">
+            <div class="item-details">
+                <p><strong><a href="profile.html">@Namratha</a></strong></p>
+                <p>Rs. 320</p>
+                <div class="actions">
+                    <button class="add-to-cart" onclick="addToCart('Painting 1')">Add to Cart</button>
+                    <i class="far fa-heart heart-icon" onclick="toggleHeart(this)"></i>
+                </div>
+            </div>
+        </div>
+        <!-- Painting 4 -->
+        <div class="gallery-item" data-price="200">
+            <img src="../static/image/p4.jpg" alt="Painting 4">
+            <div class="item-details">
+                <p><strong>@Jacob</strong></p>
+                <p>Rs. 200</p>
+                <div class="actions">
+                    <button class="add-to-cart" onclick="addToCart('Painting 4')">Add to Cart</button>
+                    <i class="far fa-heart heart-icon" onclick="toggleHeart(this)"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Painting 5 -->
+        <div class="gallery-item" data-price="400">
+            <img src="../static/image/p5.jpg" alt="Painting 5">
+            <div class="item-details">
+                <p><strong>@Shivani</strong></p>
+                <p>Rs. 400</p>
+                <div class="actions">
+                    <button class="add-to-cart" onclick="addToCart('Painting 5')">Add to Cart</button>
+                    <i class="far fa-heart heart-icon" onclick="toggleHeart(this)"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- No items found message -->
+        <div class="no-items" style="display: none;">Oops! Nothing to see here</div>
+    </div>
+
+    <script>
+        function addToCart(painting) {
+            alert(painting + " added to cart!");
+        }
+
+        function toggleHeart(icon) {
+            icon.classList.toggle('clicked');
+        }
+
+        function filterItems() {
+            const priceFilter = document.getElementById("priceFilter").value;
+            const galleryItems = document.querySelectorAll(".gallery-item");
+            let itemsFound = false;
+
+            galleryItems.forEach(item => {
+                const itemPrice = parseInt(item.getAttribute("data-price"));
+
+                if (priceFilter === "all" || itemPrice < parseInt(priceFilter)) {
+                    item.style.display = "block";
+                    itemsFound = true;
+                } else {
+                    item.style.display = "none";
+                }
+            });
+
+            const noItemsMessage = document.querySelector(".no-items");
+            if (!itemsFound) {
+                noItemsMessage.style.display = "block";
+            } else {
+                noItemsMessage.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
