@@ -55,7 +55,7 @@ def registration():
     email = request.form['email']
 
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-
+#jacob
     # Check if the username already exists
     cursor.execute('SELECT * FROM users WHERE username = %s', (username,))
     user = cursor.fetchone()
