@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Marykate&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=hTUjnDStUn4LrbbmQF4qGMvb1SwsixDYwzuobklwPFsDB_YNArYF51xrBT1tBa6HpZ0_pwVnRmliPL2O1HgU-P1db7DbfopvKx7JZ8M8M6Qr3HF4i5OnccgMmt-YLOxHyfCWvSjXHa0lKpQHy2NuENORmcNszAHmHx2b0bfMfX2hdNAEfVaXLFUMph_E97ZC9r5BwKUux4R6AjAhAQ0XS69LppI5u8YU3BNWFFsxzasPfxEH0YirXJMnqT34XYji1Y9av2U47lgHphf-NEF8RHMqoOaYbys_R5EdIYeZiZGgN9K6hFBx7TNLSbS4H9XLOIO7Uw22pfq3Iof2Mpi6eGAJh_L6jbjOAidR0FDgY_zZjs1ko3M2bcLDkDmDOAs8Aix5Zw-dDgjqLDmcdyMYvE_6K5GoSy2I6b5zXsSJLj0bhamIpHlt4wKq7NGUK8kRSDtHGUJf0vCQysgXmsae0WkbwTOdecUaTdXT0_xSyfkKdsUM1t-8AfXl0hRxfDgW8KqeqYxZw8CzyenpbRuyl1ho-8zSWsPj84dFmW4fwpcS6ftJujJniAcGDkxAmOMu3EuOD099cnvrSYmoewO8HiI2QwUC6ttAKpfpD29HysD4z2dZBtwHhWRSWOIDsjdkF8nNrMU7fp4aoJbdQ_HBBf_Xxx46HMZNuF0lHGpSmIN_-UJctIqHi47_ZMntfJ_HJ72sh_bp-wfXto0t3jtDr0H0ENy0op-V8e9Z8x251hfIF512H92iWrxyDfV6XXGeVJ0iW8T10sFYd9N_Cp4UDglyYltNGfPWn-BgqaAdWpraVXgYLzwoG3ucjit0cO72NtcJ8p961ekISnYVcVcbsX-5SSnFaVzDn5AfDNnqoL9rFFZfxzEvRBLTzVTKl7ZmAoc4jSg8vwF2XGc7Jz3xhMCfhlpKRQIy4eziUj5kFwYxtTvT_BuHRoO-1Ghf3G1DmDUOu8CeIV08osyoedZ3Lv2vPFFuEnQT8M1yjRYRXqatqQGs0alInR4kAyGZd5UHvquT61iZfDPWPcXk0j6N0Sj3j29BLefv12bNugWgh_QESX_6VonJF4mhPeiFJvpBbVnwrRm9_Qbfw7baP-HhdeKx0knU08PosqEu3tObhgVvaXWi1QD56r5IowQVpKP8lgtVR5G8oaJp14ODao2e6l0bcG3Zq6OA5Y9RD_amg4pVxabGuN8m0ZCjNjq179FqB1wxbNcT1KKDMmoeM1QBL_-sQ3-C7l-dCTlLyZIZ7Yq2lOSUMmS8fxWgfjh_8uvt6vaC3f1t-frb55J_H5f64Go7niKDhnrQ4vfvJ5v7GQy6r4Es-iYfFrz8_1xpl28Fd9MCZxrtG1tEu1sKUEbrdw5kwU7o8w5a7ydmeJ2UHJw1i-law5wQpFOgWZtrWzdertY50xpJmn9DKT8jAsZpZC5avY2tTj91QXc1hlqWek1EgKm_9NwR16MSZ6r_TOp6U7HD--aUppDob7POt9UWMw8sJOmB_J0sVGHvTd20VM8KbhOv3_jPUUdhU0vVnaXDWl8Ds8saCKX1vOKf0EDz0gYxST-DYo81B7jy0XuS3YIlncyv4dlDgZLf_Yf2HX7WHoF3Y35vEcvHO6ktylPtHJdd1qzNASAB89Czt3Cg4RJgGNPhTGui2xJlSK1M8l9unTmUCsYrQl1wFxF4UQttp3DVFG4yVmTA5cWqXxxT-1jKWC60t742BsPzPBjNTB1P6iuUlJfSkIHHEdFV_RhYwgpuUoZ17tLK1s88mTru95o" nonce="520ba5ff547e35a24c1498d9d9e18a77" charset="UTF-8"></script><style>
+    <style>
         body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
@@ -170,40 +170,38 @@
 
 <body>
     <!-- Background Image -->
-    <img class="bg-image" src="{{ url_for('static', filename='image/bgimage.png') }}" alt="Background Image">
+    <img class="bg-image" src="static/image/bgimage.png" alt="Background Image">
 
     <!-- Dark Overlay -->
     <div class="bg-overlay"></div>
 
     <header class="header">
         <div class="logo">
-            <img src="{{ url_for('static', filename='image/minilogo.png') }}" alt="NearbyNow Logo">
+            <img src="static/image/minilogo.png" alt="NearbyNow Logo">
         </div>
         <nav class="navbar">
-            <a href="{{ url_for('index') }}" class="home-icon"><i class="fas fa-home"></i></a>
+            <a href="index.html" class="home-icon"><i class="fas fa-home"></i></a>
         </nav>
     </header>
 
     <div class="signup-container">
         <h2>Sign Up</h2>
-        <form id="signup-form" action="{{ url_for('signup') }}" method="post">
+        <form id="signup-form" action="{{ url_for('registration') }}" method="POST">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" placeholder="Enter your username" required>
-
+        
             <label for="email">Email</label>
             <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
+        
             <label for="password">Password</label>
             <input type="password" id="password" name="password" placeholder="Enter your password" required>
-
+        
             <button type="submit">Sign Up</button>
         </form>
+        
         <div class="switch">
-            Already have an account? <a href="{{ url_for('login') }}">Login</a>
+            Already have an account? <a href="login.html">Login</a>
         </div>
-        {% if msg %}
-        <p>{{ msg }}</p>
-        {% endif %}
     </div>
 
     <footer class="footer">

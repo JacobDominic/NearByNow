@@ -65,7 +65,7 @@ def login():
             return redirect(url_for('home'))
         else:
             msg = 'Incorrect username/password!'
-    return render_template('login.html', msg=msg)
+    return render_template('blogin.html', msg=msg)
 
 @app.route('/logout')
 def logout():
@@ -88,6 +88,51 @@ def index():
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'),
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
+# Define routes for all other pages
+@app.route('/cart')
+def cart():
+    return render_template('cart.html')
+
+@app.route('/community')
+def community():
+    return render_template('community.html')
+
+@app.route('/crafts')
+def crafts():
+    return render_template('crafts.html')
+
+@app.route('/food')
+def food():
+    return render_template('food.html')
+
+@app.route('/landing')
+def landing():
+    return render_template('landing.html')
+
+@app.route('/mininew')
+def mininew():
+    return render_template('mininew.html')
+
+@app.route('/painting')
+def painting():
+    return render_template('painting.html')
+
+@app.route('/payment')
+def payment():
+    return render_template('payment.html')
+
+@app.route('/profile')
+def profile():
+    return render_template('profile.html')
+
+@app.route('/ptj')
+def ptj():
+    return render_template('ptj.html')
+
+@app.route('/sellerlogin')
+def sellerlogin():
+    return render_template('sellerlogin.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

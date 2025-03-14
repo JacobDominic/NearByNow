@@ -306,25 +306,28 @@
 </head>
 
 <body>
+    <!-- Background Image -->
+    <img class="bg-image" src="{{ url_for('static', filename='image/bgimage.png') }}" alt="Background Image">
+
+    <!-- Dark Overlay -->
+    <div class="bg-overlay"></div>
+
     <header class="header">
         <div class="logo">
-            <img src="../static/image/minilogo.png" alt="NearbyNow Logo"> <!-- Image logo instead of text -->
+            <img src="{{ url_for('static', filename='image/minilogo.png') }}" alt="NearbyNow Logo">
         </div>
         <nav class="navbar">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#categories">Categories</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="community.html">Community</a></li>
-            </ul>
+            <a href="{{ url_for('index') }}" class="home-icon"><i class="fas fa-home"></i></a>
         </nav>
+    </header>
+
+    <div class="landing-container">
+        <h2>Landing</h2>
         <div class="auth-buttons">
             
-            <button class="btn signup-btn" onclick="window.location.href='blogin.html'">Login</button>
+            <button class="btn signup-btn" onclick="window.location.href='/slogin'">Login</button>
         </div>
-    </header>
+    </div>
 
     <section id="home" class="hero">
         <a href="your-link-here.html">
@@ -363,20 +366,20 @@
     <section id="categories" class="categories">
         <h2>Explore Categories</h2>
         <div class="categories-grid">
-            <div class="category-item" onclick="window.location.href='blogin.html'">
+            <div class="category-item" onclick="window.location.href='/slogin'">
                 <h3>Homemade Food</h3>
                 <img src="../static/image/food.jpg" alt="Homemade Food" class="category-image">
             </div>
             
-            <div class="category-item" onclick="window.location.href='blogin.html'">
+            <div class="category-item" onclick="window.location.href='/slogin'">
                 <h3>Painting</h3>
                 <img src="../static/image/painting.jpg" alt="Painting" class="category-image">
             </div>
-            <div class="category-item" onclick="window.location.href='blogin.html'">
+            <div class="category-item" onclick="window.location.href='/slogin'">
                 <h3>Crafts</h3>
                 <img src="../static/image/craft.jpg" alt="Crafts" class="category-image">
             </div>
-            <div class="category-item" onclick="window.location.href='blogin.html'">
+            <div class="category-item" onclick="window.location.href='/slogin'">
                 <h3>Part-Time Jobs</h3>
                 <img src="../static/image/job.jpg" alt="Jobs" class="category-image">
             </div>
