@@ -180,7 +180,7 @@
             <img src="static/image/minilogo.png" alt="NearbyNow Logo">
         </div>
         <nav class="navbar">
-            <a href="index.html" class="home-icon"><i class="fas fa-home"></i></a>
+            <a href="/landing" class="home-icon"><i class="fas fa-home"></i></a>
         </nav>
     </header>
 
@@ -195,12 +195,21 @@
         
             <label for="password">Password</label>
             <input type="password" id="password" name="password" placeholder="Enter your password" required>
-        
+            <label>Sign Up As:</label>
+        <div class="role-selection">
+           
+            <label for="role">Role:</label>
+<select id="role" name="role" required>
+    <option value="user">User</option>
+    <option value="seller">Seller</option>
+</select>
+
+        </div>
             <button type="submit">Sign Up</button>
         </form>
         
         <div class="switch">
-            Already have an account? <a href="login.html">Login</a>
+            Already have an account? <a href="/slogin">Login</a>
         </div>
     </div>
 

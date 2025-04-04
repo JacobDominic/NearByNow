@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painting Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f7f4;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo img {
+            width: 120px;
+        }
+
+        .home-btn {
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .home-btn:hover {
+            color: #e07415;
+        }
+
+        .filter-container {
+            padding: 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .filter-container select {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            margin: 0 0.5rem;
+            background-color: white;
+            color: black;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 0 2rem;
+        }
+
+        .gallery-item {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .item-details p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .delete-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            background-color: red;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .delete-btn:hover {
+            background-color: darkred;
+        }
+
+        .no-items {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #e07415;
+            padding: 2rem;
+            display: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        a:hover {
+            color: #e07415;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="../static/image/minilogo.png" alt="NearbyNow Logo">
+        </div>
+        <button class="home-btn" onclick="window.location.href='mininew.html'">
+            <i class="fas fa-home"></i>
+        </button>
+    </header>
+
+    <div class="filter-container">
+        <label for="priceFilter">Filter by Price: </label>
+        <select id="priceFilter" onchange="filterItems()">
+            <option value="all">All</option>
+            <option value="100">Less than Rs. 100</option>
+            <option value="150">Less than Rs. 150</option>
+            <option value="200">Less than Rs. 200</option>
+            <option value="250">Less than Rs. 250</option>
+            <option value="300">Less than Rs. 300</option>
+        </select>
+    </div>
+
+    <div id="gallery" class="gallery">
+        <div class="gallery-item" data-price="350">
+            <img src="../static/image/p9.png" alt="Painting 1">
+            <div class="item-details">
+                <p><strong><a href="profile.html">@Namratha</a></strong></p>
+                <p>Rs. 350</p>
+                <div class="actions">
+                    <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-price="250">
+            <img src="../static/image/p1.jpg" alt="Painting 2">
+            <div class="item-details">
+                <p><strong><a href="profile.html">@Namratha</a></strong></p>
+                <p>Rs. 250</p>
+                <div class="actions">
+                    <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-price="300">
+            <img src="../static/image/p2.jpg" alt="Painting 3">
+            <div class="item-details">
+                <p><strong>@Nidha</strong></p>
+                <p>Rs. 300</p>
+                <div class="actions">
+                    <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-price="150">
+            <img src="../static/image/p6.png" alt="Painting 4">
+            <div class="item-details">
+                <p><strong><a href="profile.html">@Namratha</a></strong></p>
+                <p>Rs. 150</p>
+                <div class="actions">
+                    <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-price="250">
+            <img src="../static/image/p3.jpg" alt="Painting 5">
+            <div class="item-details">
+                <p><strong>@Ahfin</strong></p>
+                <p>Rs. 250</p>
+                <div class="actions">
+                    <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-price="200">
+            <img src="../static/image/p8.png" alt="Painting 6">
+            <div class="item-details">
+                <p><strong><a href="profile.html">@Namratha</a></strong></p>
+                <p>Rs. 200</p>
+                <div class="actions">
+                    <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-item" data-price="320">
+            <img src="../static/image/p7.png" alt="Painting 7">
+            <div class="item-details">
+                <p><strong><a href="profile.html">@Namratha</a></strong></p>
+                <p>Rs. 320</p>
+                <div class="actions">
+                    <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="no-items">Oops! Nothing to see here</div>
+
+    <script>
+        function deleteItem(button) {
+            const item = button.closest(".gallery-item");
+            item.remove();
+
+            const gallery = document.getElementById("gallery");
+            const noItemsMessage = document.querySelector(".no-items");
+
+            if (gallery.children.length === 0) {
+                noItemsMessage.style.display = "block";
+            }
+        }
+
+        function filterItems() {
+            const priceFilter = document.getElementById("priceFilter").value;
+            document.querySelectorAll(".gallery-item").forEach(item => {
+                item.style.display = priceFilter === "all" || parseInt(item.dataset.price) < parseInt(priceFilter) ? "block" : "none";
+            });
+        }
+    </script>
+</body>
+
+</html>

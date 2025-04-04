@@ -7,13 +7,30 @@
     <title>Part-time Jobs</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=lv_Rnxibhp_4E2HMKx28LAIBFmsYTUP3YGAopM5iPgxWyStjmBBxpP-8X41V0cPa0jMo1jjJEg9YYvwT3HGEZaI8GcJ-TQ1KMPwiPssoB5YrqrmbI8wmLllz23z9yXqv_Q-mOBFSY1IvmWm-kyG6eTGQc6goPB5V5iwy01yaCgJC8FUN50Ha8jAQwB2n8QRvVTnjIUSoculCmOTE1j3Z73tshScRNsv1p1a36e6DIAeA0l6u_VGoECZQnUVdVE9wRLx-gTOqyDyOeFlwgvWf3T1oswqDrj2PDapXEHXL8TONd9ossm3Ggfalb95QJT3X7NtyoYl3fRSPn0GXA1g-jTOYDJfGrVaexMW63lcEtUsRjQ424fYJWseMDuZnyjEmGNmmatMbU5piXkOKpRe5On507aieJNoaSX8bLBmczNHEgKnUdgSlrCrmS9aNJ5RI5d1hg6Ivx-b-9xiiteqrsr1rRmHGjbg5_J_Ah176i2n14P5BF_Yn2AZ3FBXoVmnnhqXXHlWIdlW_iHAAdmuqjcoRNus8EtBZrEVi-WC1jBkjCCmGy6ZgA5qRJ8yYQhYlQQAW69sUzPU1dp8AArWTnCciWlQBu7KMGgElFDOID7Vc-POF0DdCzvfSl6v9-kxZLBN0Gz5H0DFYIrFxtnV-aoT0racvMPxU-36n1HX1iq9vs-sDnaYSByY4BaKvLaRyk0eT4h95P6iJIAvMhkTBcA0uwpvzaVssazyA0XAkxGvVc3fR6v4A8ScQkeuJg181EDxkNgmPkhXVohd7DK-w8Z6wspkh_YymItmN9De84djRMNirdVi-FuDVqCkmkt8x_axXX5G8tqlkJ9lJ7K4m5la0TdflWwwjZSE1CB2wOYJwBZynZ55i-wxhAY2zpYQmK750gINyyPvEKDtRkqwV9ouhzUVscDngYW1xUQA3zcEoYxCjIe5RWwqscKsynVAOAtTksp4Mf1bunvvK9BGSXpUPAeoCT1aN51Hjb9VSEcQmANFnaSwbuenr1osriL48_UQZYVOiNw03anZrLErnLlneal1Kn_7BClD-STyGPbfDqKEL8XSWPpjnTtDf8AeU-BxdrOH0pTBmAgl1Ql1kINa0xlUPQCY4W23PL5Rb-HKQhdiAj_2U4SqvJMd6VTOmxAsQL6DjDRkOxEsZRLsXxnceShfyd1CqZdR871uJib9RBpcF0NoLKAzfu8duIdAxzuRQRLwrTCwo-zjx6KgL6twhEOgnQoKjuVta3epKil6U3vbUUXbTlwWQgTLNcGpPrz8hC_e6YLF5WgTXsR9RpGBAKxbb0K5piN8ie0DGyH0izGKwn2BtfIPbFkzla4Za8hmhpzcWqgb_ZDi6Ls9LdQa-fiT3TjZIgpASr5YW00TSySCY_ZfQHm8ZBGBy-1V2G98Kqlj7LBJiRx2HdOn2D4yjmepB3hU-GI-yJX4zwaVLf-qm8Q_kNGStN0JiV3UTpYIiYk6kTneRCsIwuJGrOwSq2uFqUxJhJKsEpCa-X7A-zEFOeNNcWV9utNW8Hgm_DSsHdumkoeQT5qV5TOTd29jb1TPFpeECndbpPAz5q4mFF6VPwGaFGe2M7LRJS3t2JC2RBnDu5QXlDqAS6ugSL0AF-hcbBNIb82KMF5ACiFPq8D5JhvgqcCtMq1mjvTIbqCxmjYBmRySofBwyIkv6kH0nfMI9Jg3LU3wgllN8702G1kJY98Ko0XqsFr_zYVJoWDk41_wMyxpHP8x4He6OJjpdSXO7fDUB4BNSdRlgtKo" nonce="cb40f6409af5fdde5128183f9ffc03bf" charset="UTF-8"></script><style>
+    <style>
         body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
-            background-color: #f0f7f4;
+            background: url('bgimage.png') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
         }
 
+        /* Dark overlay */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        /* Navbar */
         .header {
             display: flex;
             justify-content: space-between;
@@ -22,11 +39,6 @@
             background-color: white;
             color: black;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
         }
 
         .logo img {
@@ -47,70 +59,107 @@
             color: #e07415;
         }
 
+        /* Job Offers */
         .content {
             padding: 2rem;
             text-align: center;
         }
 
-        .job-container {
+        .job-offers, .offer-job-container {
             max-width: 600px;
             margin: 2rem auto;
-            background-color: white;
+            background: rgba(255, 255, 255, 0.9);
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
         }
 
-        .job-container h2 {
+        h2 {
             font-size: 1.8rem;
-            margin-bottom: 1rem;
             color: #e07415;
         }
 
-        .job-container p {
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-            color: #555;
+        .job-list {
+            text-align: left;
         }
 
-        .actions {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 1.5rem;
+        .job-item {
+            background: white;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        .apply-btn,
-        .details-btn {
-            padding: 0.8rem 1.5rem;
+        .contact-info {
             font-size: 1rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        /* Offer Job Form */
+        .offer-job-container label {
+            display: block;
+            font-weight: 500;
+            margin-top: 0.8rem;
+            color: #333;
+        }
+
+        .offer-job-container input,
+        .offer-job-container textarea {
+            width: 100%;
+            padding: 0.7rem;
+            margin-top: 0.3rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            display: block;
+        }
+
+        .offer-job-container textarea {
+            height: 80px;
+            resize: none;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.9rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .submit-btn {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            width: 100%;
+            font-size: 1rem;
+            background-color: #e07415;
+            color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
 
-        .apply-btn {
-            background-color: #27ae60;
+        .submit-btn:hover {
+            background-color: #c96110;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 1.5rem 2rem;
+            background: black;
             color: white;
+            text-align: center;
+            margin-top: auto;
         }
-
-        .apply-btn:hover {
-            background-color: #219150;
-        }
-
-        .details-btn {
-            background-color: #f39c12;
-            color: white;
-        }
-
-        .details-btn:hover {
-            background-color: #e67e22;
-        }
-
     </style>
 </head>
 
 <body>
+
     <header class="header">
         <div class="logo">
             <img src="../static/image/minilogo.png" alt="NearbyNow Logo">
@@ -120,18 +169,44 @@
         </button>
     </header>
 
+    <!-- Job Offers -->
     <div class="content">
-        <div class="job-container">
-            <h2>Doodle Artist (Part-Time)</h2>
-            <p>We are looking for a creative and passionate Doodle Artist to join our team. If you love sketching and bringing
-                creative ideas to life, this is the job for you!</p>
-
-            <div class="actions">
-                <button class="details-btn" onclick="window.location.href='/jobdetails'">See Details</button>
-                <button class="apply-btn" onclick="window.location.href='/apply'">Apply Now</button>
+        <div class="job-offers">
+            <h2>Available Job Offers</h2>
+            <div id="job-list" class="job-list">
+                <!-- Job items will be dynamically loaded here -->
             </div>
         </div>
     </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 NearbyNow. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async function () {
+            try {
+                const response = await fetch("/getjoboffers");
+                const jobOffers = await response.json();
+
+                const jobList = document.getElementById("job-list");
+                jobList.innerHTML = ""; // Clear existing content
+
+                jobOffers.forEach((job) => {
+                    const jobItem = document.createElement("div");
+                    jobItem.className = "job-item";
+                    jobItem.innerHTML = `
+                        <p><strong>${job.title}</strong></p>
+                        <p>${job.description}</p>
+                        <p class="contact-info">📞 Contact: ${job.contact}</p>
+                    `;
+                    jobList.appendChild(jobItem);
+                });
+            } catch (error) {
+                console.error("Error fetching job offers:", error);
+            }
+        });
+    </script>
 
 </body>
 

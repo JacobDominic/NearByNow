@@ -106,6 +106,10 @@ def crafts():
 def food():
     return render_template('food.html')
 
+@app.route('/adminfood')
+def admin_food():
+    return render_template('adminfood.html')
+
 @app.route('/landing')
 def landing():
     return render_template('landing.html')

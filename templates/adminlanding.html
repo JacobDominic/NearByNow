@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Manage Users & Products</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: url('bgimage.png') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: white;
+            color: black;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo img {
+            width: 120px;
+        }
+
+        .logout-btn {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background-color: #c9302c;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            margin: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .list-container {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+        }
+
+        .item-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: white;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .delete-btn {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .delete-btn:hover {
+            background-color: #c9302c;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="../static/image/minilogo.png" alt="NearbyNow Admin">
+        </div>
+        <a href="/logout">
+            <button class="logout-btn">Logout</button>
+        </a>
+        
+    </header>
+
+    <div class="main-content">
+        <!-- Manage Users Section -->
+        <div class="list-container">
+            <h2>Manage Users</h2>
+            <ul class="item-list" id="user-list">
+                <li class="item">
+                    <span>Seller 1 - John Doe</span>
+                    <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
+                </li>
+                <li class="item">
+                    <span>Seller 2 - Jane Smith</span>
+                    <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
+                </li>
+                <li class="item">
+                    <span>Seller 3 - Emily Johnson</span>
+                    <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Manage Products Section -->
+        <div class="list-container">
+            <h2>Manage Products</h2>
+            <ul class="item-list" id="product-list">
+                <li class="item">
+                    <span>Homemade Cake - $10</span>
+                    <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
+                </li>
+                <li class="item">
+                    <span>Handmade Craft - $15</span>
+                    <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
+                </li>
+                <li class="item">
+                    <span>Custom Painting - $25</span>
+                    <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+    fetch("/get_users_items")
+        .then(response => response.json())
+        .then(data => {
+            displayUsers(data);
+            displayProducts(data);
+        })
+        .catch(error => console.error("Error fetching data:", error));
+});
+
+function displayUsers(users) {
+    const userList = document.getElementById("user-list");
+    userList.innerHTML = ""; // Clear existing content
+
+    users.forEach(user => {
+        if (user.role === "user") {  // Only show users
+            let li = document.createElement("li");
+            li.classList.add("item");
+            li.innerHTML = `
+                <span>${user.username} - ${user.email}</span>
+                <button class="delete-btn" onclick="deleteUser(${user.user_id}, this)">Delete</button>
+            `;
+            userList.appendChild(li);
+        }
+    });
+}
+
+function displayProducts(users) {
+    const productList = document.getElementById("product-list");
+    productList.innerHTML = ""; // Clear existing content
+
+    users.forEach(user => {
+        if (user.items.length > 0) {
+            user.items.forEach(item => {
+                let li = document.createElement("li");
+                li.classList.add("item");
+                li.innerHTML = `
+                    <span>${item.title} - $${item.price}</span>
+                    <img src="${item.image}" alt="${item.title}" width="50">
+                    <button class="delete-btn" onclick="deleteItem(${item.item_id}, this)">Delete</button>
+                `;
+                productList.appendChild(li);
+            });
+        }
+    });
+}
+
+function deleteUser(userId, button) {
+    if (!confirm("Are you sure you want to delete this user and all their items?")) return;
+
+    fetch(`/delete_user/${userId}`, {
+        method: "DELETE",
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.message);
+        button.parentElement.remove();
+    })
+    .catch(error => console.error("Error deleting user:", error));
+}
+
+function deleteItem(itemId, button) {
+    if (!confirm("Are you sure you want to delete this item?")) return;
+
+    fetch(`/delete_item/${itemId}`, {
+        method: "DELETE",
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.message);
+        button.parentElement.remove();
+    })
+    .catch(error => console.error("Error deleting item:", error));
+}
+    </script>
+</body>
+
+</html>

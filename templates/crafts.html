@@ -86,6 +86,7 @@
         }
 
         .gallery-item {
+            width: 300px;
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -152,12 +153,13 @@
 
 <body>
     <header class="header">
-        <div class="logo">
-            <img src="../static/image/minilogo.png" alt="NearbyNow Logo">
-        </div>
-        <button class="home-btn" onclick="window.location.href='/mininew'">
+        <div style="margin-left: auto; display: flex; align-items: center; gap: 1.5rem;">
+            <span class="icon" style="font-size: 1.8rem; cursor: pointer;" onclick="window.location.href='/cart'">🛒</span> <!-- Cart Icon -->
+            <span class="icon" style="font-size: 1.8rem; cursor: pointer;" onclick="window.location.href='/wishlist'">❤</span> <!-- Wishlist Icon -->
+            <button class="home-btn" onclick="window.location.href='/mininew'">
             <i class="fas fa-home"></i>
-        </button>
+            </button>
+        </div>
     </header>
 
     
@@ -165,98 +167,165 @@
     <!-- Filter Section just above the gallery -->
     <div class="filter">
         <label for="priceFilter">Filter by Price: </label>
-        <select id="priceFilter" onchange="filterItems()">
+        <!-- <select id="priceFilter" onchange="filterItems()">
             <option value="all">All</option>
             <option value="200">Rs. 200</option>
             <option value="250">Rs. 250</option>
             <option value="150">Rs. 150</option>
             <option value="180">Rs. 180</option>
-        </select>
+        </select> -->
+        <input type="number" id="priceFilter" onchange="filterItems()">
     </div>
 
     <div class="gallery" id="craftGallery">
-        <!-- Craft Item 1 -->
-        <div class="gallery-item" data-price="200">
-            <img src="../static/image/c1.jpg" alt="Craft 1">
-            <div class="item-details">
-                <p><strong>By Creative Hands</strong></p>
-                <p>Rs. 200</p>
-                <div class="actions">
-                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
-                    <i class="far fa-heart heart-icon" onclick="toggleHeart(this)"></i>
-                </div>
-            </div>
-        </div>
-
-        <!-- Craft Item 2 -->
-        <div class="gallery-item" data-price="250">
-            <img src="../static/image/c2.jpg" alt="Craft 2">
-            <div class="item-details">
-                <p><strong>By Artistry Corner</strong></p>
-                <p>Rs. 250</p>
-                <div class="actions">
-                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
-                    <i class="far fa-heart heart-icon" onclick="toggleHeart(this)"></i>
-                </div>
-            </div>
-        </div>
-
-        <!-- Craft Item 3 -->
-        <div class="gallery-item" data-price="180">
-            <img src="../static/image/c3.jpg" alt="Craft 3">
-            <div class="item-details">
-                <p><strong>By Handcrafted Wonders</strong></p>
-                <p>Rs. 180</p>
-                <div class="actions">
-                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
-                    <i class="far fa-heart heart-icon" onclick="toggleHeart(this)"></i>
-                </div>
-            </div>
-        </div>
-
-        <!-- Craft Item 4 -->
-        <div class="gallery-item" data-price="150">
-            <img src="../static/image/c4.jpg" alt="Craft 4">
-            <div class="item-details">
-                <p><strong>By DIY Magic</strong></p>
-                <p>Rs. 150</p>
-                <div class="actions">
-                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
-                    <i class="far fa-heart heart-icon" onclick="toggleHeart(this)"></i>
-                </div>
-            </div>
-        </div>
+       <!-- Placeholder for when no items match filter -->
+       <div class="no-items" style="display: none;">Oops! Nothing to see here</div>
     </div>
+       <script>
+        document.addEventListener('DOMContentLoaded', loadCrafts);
 
-    <script>
-        function addToCart() {
-            alert("Item added to cart!");
+async function loadCrafts() {
+    try {
+        const response = await fetch('/getcraftitems'); // Call backend API
+        const crafts = await response.json(); // Parse response
+        const gallery = document.getElementById('craftGallery');
+        gallery.innerHTML = ''; // Clear previous items
+
+        crafts.forEach(craft => {
+            const item = document.createElement('div');
+            item.className = 'gallery-item';
+            item.setAttribute('data-price', craft.price);
+
+            item.innerHTML = `
+                <img src="${craft.image}" alt="${craft.title}">
+                <div class="item-details">
+                    <p><strong>${craft.title}</strong></p>
+                    <p>Rs. ${craft.price}</p>
+                    <p>${craft.description}</p>
+                    <div class="actions">
+                        <button class="add-to-cart" onclick="addToCart('${craft.id}', '${craft.title}', '${craft.price}', '${craft.image}')">Add to Cart</button>
+                        <i class="far fa-heart heart-icon" onclick="toggleHeart(this, '${craft.id}', '${craft.title}', '${craft.price}', '${craft.image}')"></i>
+                    </div>
+                </div>
+            `;
+            gallery.appendChild(item);
+        });
+    } catch (error) {
+        console.error('Error fetching craft items:', error);
+    }
+}
+
+async function addToCart(itemId, title, price, image) {
+    try {
+        const response = await fetch('/addtocart', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                item_id: itemId,
+                title: title,
+                price: price,
+                image: image,
+            }),
+        });
+
+        const result = await response.json();
+        if (result.success) {
+            alert(result.message);
+        } else {
+            alert(result.error || 'Failed to add item to cart.');
         }
+    } catch (error) {
+        console.error('Error adding item to cart:', error);
+    }
+}
 
-        function toggleHeart(icon) {
-            icon.classList.toggle('clicked');
-            if (icon.classList.contains('clicked')) {
-                icon.classList.remove('far');
-                icon.classList.add('fas');
-            } else {
-                icon.classList.remove('fas');
-                icon.classList.add('far');
-            }
+async function addToWishlist(itemId, title, price, image) {
+    try {
+        const response = await fetch('/addtowishlist', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                item_id: itemId,
+                title: title,
+                price: price,
+                image: image,
+            }),
+        });
+
+        const result = await response.json();
+        if (result.success) {
+            alert(result.message);
+        } else {
+            alert(result.error || 'Failed to add item to wishlist.');
         }
+    } catch (error) {
+        console.error('Error adding item to wishlist:', error);
+    }
+}
 
-        function filterItems() {
-            const filterValue = document.getElementById('priceFilter').value;
+function toggleHeart(icon, itemId, title, price, image) {
+    icon.classList.toggle('clicked');
+
+    if (icon.classList.contains('clicked')) {
+        addToWishlist(itemId, title, price, image);
+    }
+}
+function filterItems() {
+            console.log("hello")
+            const priceFilter = document.getElementById('priceFilter').value;
             const items = document.querySelectorAll('.gallery-item');
-
+            let visibleItems = 0;
+            console.log(items)
             items.forEach(item => {
-                const itemPrice = item.getAttribute('data-price');
-                if (filterValue === 'all' || filterValue === itemPrice) {
+                const price = parseInt(item.getAttribute('data-price'));
+                console.log(price);
+                if (priceFilter === 'all' || price <= priceFilter) {
                     item.style.display = 'block';
+                    visibleItems++;
                 } else {
                     item.style.display = 'none';
                 }
             });
+
+            // Display 'Oops! Nothing to see here' if no items match the filter
+            const noItemsMessage = document.querySelector('.no-items');
+            if (visibleItems === 0) {
+                noItemsMessage.style.display = 'block';
+            } else {
+                noItemsMessage.style.display = 'none';
+            }
         }
+
+async function loadItems(category) {
+    try {
+        const response = await fetch(`/getitems/${category}`);
+        const items = await response.json();
+
+        const gallery = document.getElementById('gallery');
+        gallery.innerHTML = ''; // Clear previous items
+
+        items.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.className = 'gallery-item';
+
+            itemElement.innerHTML = `
+                <img src="${item.image}" alt="${item.title}">
+                <div class="item-details">
+                    <p><strong>${item.title}</strong></p>
+                    <p>Rs. ${item.price}</p>
+                    <p>${item.description}</p>
+                </div>
+            `;
+            gallery.appendChild(itemElement);
+        });
+    } catch (error) {
+        console.error('Error loading items:', error);
+    }
+}
     </script>
 </body>
 
