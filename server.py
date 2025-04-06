@@ -281,7 +281,7 @@ def remove_wishlist_item(item_id):
 # Route for index page
 @app.route('/')
 def index():
-    return render_template('sellerlanding.html')
+    return render_template('landing.html')
 
 # Other routes for various pages
 # @app.route('/blogin')

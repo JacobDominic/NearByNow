@@ -152,6 +152,9 @@
 
 <body>
     <header class="header">
+        <div class="logo">
+            <img src="../static/image/minilogo.png" alt="NearbyNow Logo"> <!-- Image logo instead of text -->
+        </div>
         <div style="margin-left: auto; display: flex; align-items: center; gap: 1.5rem;">
             <span class="icon" style="font-size: 1.8rem; cursor: pointer;" onclick="window.location.href='/cart'">🛒</span> <!-- Cart Icon -->
             <span class="icon" style="font-size: 1.8rem; cursor: pointer;" onclick="window.location.href='/wishlist'">❤</span> <!-- Wishlist Icon -->
@@ -233,18 +236,13 @@ async function addToCart(itemId, title, price, image) {
     }
 }
 
-        function toggleHeart(icon) {
-            icon.classList.toggle('clicked');
+function toggleHeart(icon, itemId, title, price, image) {
+    icon.classList.toggle('clicked');
 
-            if (icon.classList.contains('clicked')) {
-                icon.classList.remove('far');
-                icon.classList.add('fas');
-            } else {
-                icon.classList.remove('fas');
-                icon.classList.add('far');
-            }
-        }
-
+    if (icon.classList.contains('clicked')) {
+        addToWishlist(itemId, title, price, image);
+    }
+}
         function filterItems() {
             console.log("hello")
             const priceFilter = document.getElementById('priceFilter').value;
@@ -270,7 +268,31 @@ async function addToCart(itemId, title, price, image) {
                 noItemsMessage.style.display = 'none';
             }
         }
+    async function addToWishlist(itemId, title, price, image) {
+    try {
+        const response = await fetch('/addtowishlist', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                item_id: itemId,
+                title: title,
+                price: price,
+                image: image,
+            }),
+        });
 
+        const result = await response.json();
+        if (result.success) {
+            alert(result.message);
+        } else {
+            alert(result.error || 'Failed to add item to wishlist.');
+        }
+    } catch (error) {
+        console.error('Error adding item to wishlist:', error);
+    }
+} 
     </script>
 </body>
 

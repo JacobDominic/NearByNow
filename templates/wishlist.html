@@ -14,7 +14,11 @@
             background-color: #f0f7f4;
             text-align: center;
         }
-
+.wishlist-items img{
+    aspect-ratio: 1;
+    width: 28%;
+    border-radius: 10px;
+}
         .header {
             display: flex;
             justify-content: space-between;
@@ -54,7 +58,12 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-
+        .icon {
+    font-size: 1.8rem; /* Increase the size */
+    cursor: pointer;
+    margin-right: 1rem;
+    margin-top: 1rem; /* Adds spacing between icons */
+}
         .empty-cart {
             font-size: 1.5rem;
             color: #e07415;
@@ -64,6 +73,7 @@
         .wishlist-items {
             list-style: none;
             padding: 0;
+            
         }
 
         .wishlist-item {
@@ -71,6 +81,8 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem;
+        
+
             background: white;
             margin-bottom: 10px;
             border-radius: 5px;
@@ -120,7 +132,8 @@
             <img src="../static/image/minilogo.png" alt="NearbyNow Logo">
         </div>
         <nav class="navbar">
-            <a href="mininew.html" class="home-icon"><i class="fas fa-home"></i></a>
+            <span class="icon" onclick="window.location.href='/cart'">🛒</span> <!-- Cart Icon -->
+            <a href="/mininew" class="home-icon"><i class="fas fa-home"></i></a>
         </nav>
     </header>
 

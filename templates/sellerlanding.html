@@ -210,7 +210,7 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-
+#
         .submit-btn:hover {
             background-color: #218838;
         }
@@ -225,9 +225,10 @@
             <img src="../static/image/minilogo.png" alt="NearbyNow Logo">
         </div>
         <nav class="navbar">
-            <button class="role-btn">I'm a Buyer</button>
+            <button class="role-btn" onclick="window.location.href='/slogin'">I'm a Buyer</button>
+
             <ul>
-                <li><a href="mininew.html"><i class="fas fa-home home-btn"></i></a></li>
+                <li><a href="/landing"><i class="fas fa-home home-btn"></i></a></li>
             </ul>
         </nav>
     </header>
@@ -282,7 +283,7 @@
                     <label for="image">Image:</label>
                     <input type="file" id="image" name="image" accept="image/*" required><br><br>
 
-                    <button type="submit">Post Item</button>
+                    <button type="submit" >Post Item</button>
                 </form>
             `;
 
